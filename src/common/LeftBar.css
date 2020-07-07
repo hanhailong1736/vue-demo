@@ -1,0 +1,68 @@
+.LeftBarPage {
+    background: #ffffff;
+    border-top: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    width: 170px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    border: 1px solid #DCDFE6;
+    min-height: calc(100vh-110px);
+    & .item {
+        background: #ffffff;
+        width: 168px;
+        height: 46px;
+        box-sizing: border-box;
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        color: #262626;
+        letter-spacing: 0;
+        text-align: left;
+        padding: 0 20px;
+        line-height: 44px;
+        cursor: pointer;
+        & .downArrow {
+            width: 16px;
+            height: 16px;
+            float: right;
+            margin-top: 12px;
+        }
+    }
+    & .active {
+        background: #F2F7FC;
+        color: #1890ff;
+    }
+    & .menu_ui {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        & li {
+            font-family: MicrosoftYaHei;
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 46px;
+            height: 46px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-inline-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            & a {
+                text-decoration: none;
+                display: flex;
+                padding-left: 40px;
+                color: #666;
+            }
+        }
+        & .active {
+            background: #e6f7ff;
+            border-right: #1890ff 3px solid;
+            & a {
+                color: #1890ff;
+            }
+        }
+    }
+}

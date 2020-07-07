@@ -1,0 +1,171 @@
+.HeadViewPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    background-color: #135391;
+    & .left {
+        display: inline-flex;
+        align-items: center;
+        & .logo {
+            width: 58px;
+            height: 58px;
+            display: inline-flex;
+            border-radius: 50%;
+        }
+        & .title {
+            margin-left: 28px;
+            font-size: 26px;
+            color: #FFFFFF;
+        }
+    }
+    & .right {
+        display: flex;
+        align-items: center;
+        & .message_icon {
+            width: 26px;
+            height: 26px;
+        }
+        & .button_default {
+            border: none;
+        }
+        & .beijingse_icon {
+            width: 26px;
+            height: 26px;
+        }
+        & .user_icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+        & .login {
+            border: 1px solid white;
+            border-radius: 4px;
+            width: 96px;
+            height: 40px;
+            font-family: MicrosoftYaHei;
+            font-size: 21px;
+            color: white;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        & .login:hover {
+            border: 1px solid #1890ff;
+            color: #1890ff;
+        }
+        & .dropdown {
+            display: inline-block;
+        }
+         & .dropdown:hover {
+            background-color: #104a85 !important;
+        }
+        & .dropbtn {
+            position: relative;
+            right: 20px;
+            font-family: MicrosoftYaHei;
+            font-size: 13px;
+            color: white;
+            letter-spacing: 1px;
+            min-width: 180px;
+            height: 70px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            & .arrow {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        & .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 180px;
+            z-index: 2;
+            background: #104a85;
+
+        }
+        & .dropdown-content a {
+            position: relative;
+            right: 30px;
+            text-decoration: none;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-family: MicrosoftYaHei;
+            font-size: 13px;
+            color: white;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        & .dropdown-content a:hover {
+            color: #1890ff;
+        }
+        & .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        & .dropdown:hover .dropbtn {
+            & .arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.loginView {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .mark {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    & .login_mark {
+        position: absolute;
+        z-index: 2;
+        width: 500px;
+        height: 400px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        & .close_icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+        }
+        & .loginName {
+            width: 300px;
+            margin-top: 20px;
+        }
+        & .login_button {
+            margin-top: 80px;
+            width: 300px;
+        }
+    }
+}
