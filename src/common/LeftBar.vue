@@ -1,15 +1,34 @@
 <template>
   <div class="LeftBarPage">
-    <div v-for="(item,index) in itemList" :key="index">
-      <div :class="['item',{'active':item.active}]" @click="itemClick(index)">
-        <i :class="'iconfont icon-'+iconList[index]"></i>
-        <span>{{item.text}}</span>
-        <img v-if="item.subMenu.length&&item.active" class="downArrow" src="../img/blueUp.png" />
-        <img v-else-if="item.subMenu.length" class="downArrow" src="../img/down.png" alt srcset />
+    <div v-for="(item, index) in itemList" :key="index">
+      <div :class="['item', { active: item.active }]" @click="itemClick(index)">
+        <span>{{ item.text }}</span>
+        <img
+          v-if="item.subMenu.length && item.active"
+          class="downArrow"
+          src="../img/blueUp.png"
+        />
+        <img
+          v-else-if="item.subMenu.length"
+          class="downArrow"
+          src="../img/down.png"
+          alt
+          srcset
+        />
       </div>
       <ul v-if="item.active" class="menu_ui">
-        <li v-for="(li,i) in item.subMenu" :key="i" :class="{'active':li.active}">
-          <router-link :to="{name: li.name,params: { ulName: item.name,liName:li.name}}">{{li.text}}</router-link>
+        <li
+          v-for="(li, i) in item.subMenu"
+          :key="i"
+          :class="{ active: li.active }"
+        >
+          <router-link
+            :to="{
+              name: li.name,
+              params: { ulName: item.name, liName: li.name }
+            }"
+            >{{ li.text }}</router-link
+          >
         </li>
       </ul>
     </div>
@@ -26,21 +45,6 @@ export default {
   name: "LeftBar",
   data() {
     return {
-      // 左侧菜单使用的icon图标
-      iconList: [
-        "zuzhi",
-        "jingchabanshen",
-        "tijian1",
-        "yk_fangkuai",
-        "nvbing",
-        "winfo-icon-junduijiwujingziyuan",
-        "boshimao",
-        "guanli1",
-        "tongji-",
-        "huawei",
-        "guanli1",
-        "kaohe1"
-      ],
       itemList: [
         {
           active: true,
@@ -51,94 +55,14 @@ export default {
               active: true,
               text: "注册用户",
               name: "user"
-            },
-            // {
-            //   active: false,
-            //   text: "虚拟用户",
-            //   name: "fabricateuser"
-            // }
-          ]
-        },
-        {
-          active: false,
-          text: "工作台",
-          name: "works",
-           subMenu: [
-            {
-              active: false,
-              text: "工作台",
-              name: "works"
             }
           ]
         },
         {
           active: false,
-          text: "游戏管理",
-          name: "game",
+          text: "系统设置",
+          name: "system",
           subMenu: [
-            {
-              active: false,
-              text: "游戏管理",
-              name: "game"
-            }
-          ]
-        },
-        {
-          active: false,
-          text: "财务管理",
-          name: "money",
-          subMenu: [
-            {
-              active: false,
-              text: "财务管理",
-              name: "money"
-            },
-            {
-              active: false,
-              text: "算力记录",
-              name: "mypower"
-            },
-            {
-              active: false,
-              text: "URU记录",
-              name: "myuru"
-            },
-            {
-              active: false,
-              text: "提现审核",
-              name: "mycash"
-            },
-          ]
-        },
-         {
-          active: false,
-          text: "数据统计",
-          name: "tongji",
-          subMenu: [
-            {
-              active: false,
-              text: "数据统计",
-              name: "tongji"
-            }
-          ]
-        },
-        {
-          active:false,
-          text:"消息管理",
-          name:"message",
-           subMenu: [
-            {
-              active: false,
-              text: "消息管理",
-              name: "message"
-            }
-          ]
-        },
-         {
-          active:false,
-          text:"系统设置",
-          name:"system",
-           subMenu: [
             {
               active: false,
               text: "系统设置",
