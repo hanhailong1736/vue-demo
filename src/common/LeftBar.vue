@@ -49,12 +49,12 @@ export default {
         {
           active: true,
           text: "用户管理",
-          name: "user",
+          name: "index",
           subMenu: [
             {
               active: true,
               text: "注册用户",
-              name: "user"
+              name: "index"
             }
           ]
         },
