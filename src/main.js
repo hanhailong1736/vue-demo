@@ -6,7 +6,16 @@ import store from './store'
 import router from './router'
 
 Vue.config.productionTip = false
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+import "./common/base.css";
+import VueJsonp from "vue-jsonp";
+import plugin from "./utils/plugin";
+Vue.use(plugin);
+Vue.use(VueJsonp);
+Vue.use(ElementUI);
 
+import "./axios-init";
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

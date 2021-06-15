@@ -12,10 +12,10 @@
           {{ loginName }}
           <img class="arrow" src="../img/down.png" alt srcset />
         </div>
-        <div class="dropdown-content">
+        <!-- <div class="dropdown-content">
           <router-link :to="{ name: 'personal' }" replace>个人资料</router-link>
           <a @click="logoutClick()" href="javascript:void(0)">退出</a>
-        </div>
+        </div> -->
       </div>
     </div>
     <div v-if="showLoginView" class="loginView">

@@ -12,7 +12,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             '/api-demo': {
-                target: 'http://188.131.237.240:9200/',
+                target: 'https://exam.51cto.com/',
                 changeOrigin: true, //改变源 
                 pathRewrite: {
                     '^/api-demo': ''

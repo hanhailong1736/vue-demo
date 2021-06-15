@@ -84,12 +84,30 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'index',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+     initData: function(params) {
+      let that = this;
+      axios({
+        method: "get",
+        url: "/ruankao.php/v1/exam-paper/index?subject_id=238&open_id=ovdaA4huznxNnGV73tK1jfnc-Bew&type=1&size=40&page=1&area=3"
+      })
+        .then(function(res) {
+          console.log("res=",res);
+        })
+        .catch(function(error) {
+        });
+    },
+  },
+  created(){
+    // this.initData()
   }
 }
 </script>

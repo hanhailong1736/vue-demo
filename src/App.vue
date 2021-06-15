@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="this.$route.path == '/login'">
+    <router-view />
+  </div>
+  <div id="app" v-else>
     <head-view></head-view>
     <div class="container">
       <left-bar></left-bar>
@@ -60,7 +63,7 @@ export default {
   background: #ffffff;
   border: 1px solid #eaeaea;
   width: 87%;
-  max-width: calc(100vw-190px);
+  /* max-width: calc(100vw-190px); */
   min-height: calc(100vh-110px);
   overflow: hidden;
   word-break: break-word;
