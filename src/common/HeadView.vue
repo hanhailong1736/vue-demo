@@ -12,10 +12,10 @@
           {{ loginName }}
           <img class="arrow" src="../img/down.png" alt srcset />
         </div>
-        <!-- <div class="dropdown-content">
-          <router-link :to="{ name: 'personal' }" replace>个人资料</router-link>
+        <div class="dropdown-content">
+          <!-- <router-link :to="{ name: 'personal' }" replace>个人资料</router-link> -->
           <a @click="logoutClick()" href="javascript:void(0)">退出</a>
-        </div> -->
+        </div>
       </div>
     </div>
     <div v-if="showLoginView" class="loginView">
@@ -46,7 +46,6 @@
 import Vue from "vue";
 import { mapGetters, mapActions } from "vuex";
 import axios from "axios";
-// import Toast from "../components/Toast";
 import "./HeadView.css";
 export default {
   components: {},
@@ -142,7 +141,7 @@ export default {
     if (this.userInfo&&this.userInfo.account) {
       this.isLogin = true;
       this.loginName = this.userInfo.account;
-    } else {
+    // } else {
       // this.getUserInfo();
     }
   },

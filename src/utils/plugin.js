@@ -63,6 +63,13 @@ const formatParams = (data) => {
     }
     return arr.join('&');
 }
+const confirm = (that) => {
+    return that.$confirm("删除后不可恢复，请谨慎操作！确认删除吗？", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+    }).catch(function() {});
+}
 
 
 export default {
@@ -76,7 +83,8 @@ export default {
             methods: {
                 formatDateTime,
                 passData,
-                formatParams
+                formatParams,
+                confirm
             }
         })
     }
