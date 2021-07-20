@@ -8,7 +8,19 @@
       <left-bar></left-bar>
       <div class="mainPage">
         <div class="k-crumb-wrap">
-          <span>{{ crumb }}</span>
+          <span
+            :class="['crumb', { active: item.go }]"
+            @click="crumbClick(item)"
+            :key="index"
+            >{{ item.name }}</span
+          >
+          <span
+            class="crumb"
+            :key="'tem' + index"
+            v-if="index < crumb.length - 1"
+          >
+            >
+          </span>
         </div>
         <router-view />
       </div>
@@ -80,7 +92,14 @@ export default {
   background-color: #f8f9fb;
   padding-left: 10px;
 }
+.crumb {
+  cursor: default;
+}
 
+.active:hover {
+  cursor: pointer;
+  color: royalblue;
+}
 button::after {
   border: none;
 }
