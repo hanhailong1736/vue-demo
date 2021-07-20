@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueAxios from 'vue-axios'
 import axios from "axios";
 // import qs from 'qs'
-import Toast from "./components/Toast";
 /****** 创建axios实例 ******/
 // let service = axios.create(); //创建Loading 的实例
 axios.defaults.baseURL = config.api; // 配置axios请求的地址
@@ -61,26 +60,25 @@ axios.interceptors.response.use(
                 return Promise.resolve(data);
             } else if (code == 1002) { //未登录或登录过期
                 window.localStorage.removeItem("token");
-                Toast(message);
                 setTimeout(() => {
                     location.reload()
                 }, 1000);
                 return Promise.reject(response);
             } else {
-                Toast(message);
+                if (typeof(message) == 'object') {
+                    message = message.sqlMessage || message.code || ''
+                }
                 return Promise.reject(message);
             }
         } else {
             if (response.status === 200 && response.data) {
                 return Promise.resolve(response);
             } else {
-                Toast("接口异常，请稍后再试");
                 return Promise.reject('接口异常，请稍后再试');
             }
         }
     }, // 否则的话抛出错误
     error => {
-        Toast(error.response);
         return Promise.reject(error.response);
     }
 );
